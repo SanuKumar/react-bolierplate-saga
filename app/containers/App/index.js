@@ -19,6 +19,8 @@ import Footer from 'components/Footer';
 
 import GlobalStyle from '../../global-styles';
 
+import MyPage from 'containers/MyPage/Loadable';
+
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
   margin: 0 auto;
@@ -41,6 +43,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
+        <Route path="/mypage" component={MyPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
