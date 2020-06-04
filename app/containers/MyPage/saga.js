@@ -5,7 +5,7 @@ import { fetchUsers } from './api';
 
 function* getApiData(action) {
   try {
-    //do api call
+    // do api call
     const data = yield call(fetchUsers);
     yield put(receiveApiData(data));
   } catch (e) {

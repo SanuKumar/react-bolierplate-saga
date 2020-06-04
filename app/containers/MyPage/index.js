@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
-import messages from './messages';
 import H1 from 'components/H1';
 
 import { bindActionCreator } from 'redux';
 import { connect } from 'react-redux';
+import messages from './messages';
 import { requestApiData } from './actions';
 
 class MyPage extends Component {
   componentDidMount() {
     this.props.requestApiData();
   }
+
   render() {
     {
       console.log(this.props);
