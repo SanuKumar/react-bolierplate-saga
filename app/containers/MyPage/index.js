@@ -7,11 +7,12 @@ import H1 from 'components/H1';
 import { bindActionCreator } from 'redux';
 import { connect } from 'react-redux';
 import messages from './messages';
-import { requestApiData } from './actions';
+import { requestApiData, receiveApiData } from './actions';
 
 class MyPage extends Component {
   componentDidMount() {
     this.props.requestApiData();
+    this.props.receiveApiData();
   }
 
   render() {
@@ -36,7 +37,7 @@ class MyPage extends Component {
 }
 
 const mapStateToProps = state => ({
-  myPageReducer: state.users,
+  mypage: state.users,
 });
 
 // const mapDispatchToProps = dispatch =>
@@ -50,5 +51,5 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   //
-  { requestApiData },
+  { requestApiData, receiveApiData },
 )(MyPage);

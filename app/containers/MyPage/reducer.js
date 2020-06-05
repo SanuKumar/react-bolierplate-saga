@@ -7,7 +7,7 @@ export const initialState = {
 const myPageReducer = (state = initialState, actions) => {
   switch (actions.type) {
     case RECEIVE_API_DATA:
-      return data;
+      return initialState;
     default:
       return state;
   }

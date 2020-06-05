@@ -6,7 +6,8 @@ import { fetchUsers } from './api';
 function* getApiData(action) {
   try {
     // do api call
-    const data = yield call(fetchUsers);
+    const data = yield call(fetchUsers());
+    console.log('data received', data);
     yield put(receiveApiData(data));
   } catch (e) {
     console.log(e);
